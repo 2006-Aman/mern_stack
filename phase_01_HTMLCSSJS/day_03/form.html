@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Form</title>
+</head>
+
+<body>
+
+    <div id="container">
+
+        <form id="studentForm">
+
+            <div class="formContainer">
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+            </div>
+
+            <div class="formContainer">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="formContainer">
+                <label for="age">Age:</label>
+                <input type="number" id="age" placeholder="Enter your age" required>
+            </div>
+
+            <div>
+                <button type="submit" id="submit">Submit</button>
+            </div>
+
+        </form>
+
+        <hr>
+
+        <div>
+            <h2>Student Data</h2>
+
+            <table border="1" cellpadding="10">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Age</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tableBody">
+                    <tr>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+<script>
+    var btn = document.getElementById("submit");
+    btn.addEventListener("click", function (event) {
+        event.preventDefault();
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var age = document.getElementById("age").value;
+
+        var tbody = document.getElementById("tableBody");
+        tbody.innerHTML += `<tr>
+                            <td>${name}</td>
+                            <td>${email}</td>
+                            <td>${age}</td>
+                        </tr>`;
+
+        name = "";
+        email = "";
+        age = "";
+    })
+</script>
