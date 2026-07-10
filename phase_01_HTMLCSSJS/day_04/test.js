@@ -1,65 +1,18 @@
-// var name="kartik"
+console.log("Start");
 
-// function fun1(){
-//     let a=10
-//     console.log(10)
-// }
-// fun1()
-// console.log(name)
+let t = document.getElementById("title");
+setTimeout(function () {
+    t.innerText="Maa, Mai Aagya"
+}, 3000);
 
-// // chrome - V8 engine
-// // enternet explorer --> chakra
-// // firefox - spider monkey
+let counter = 0;
+let hCount = document.getElementById("count");
+setInterval(function (){
+    counter++;
+    hCount.innerText = counter;
+    if(counter==10){
+        counter = 0;
+    }
+}, 1000);
 
-// console.log(a) 
-//  Memory allcation phase a=undefined
-// all variables and functions move to the top of scope
-
-// a=undefined, b=Temperal Dead Zone, fun()
-// console.log(a)
-// fun1()
-
-// var a=15
-
-// let b=24   
-
-// function fun1(){
-
-// }
-
-
-// Asynchronous Javascript
-
-// synchronous javascript
-
-// let name="aman"
-
-// let age=30
-
-
-// console.log(`Name of student is ${name} and Age is ${age}`)
-
-
-// function hello(){
-//     console.log("hello world")
-// }
-
-// hello() 
-
-
-
-// let a=70
-
-console.log("Start")
-
-
-setTimeout(function(){
-    console.log("Hello world")
-},5000)
-
-
-console.log("End")
-
-// api fetch 
-
-// console.log("End")
+console.log("End");
