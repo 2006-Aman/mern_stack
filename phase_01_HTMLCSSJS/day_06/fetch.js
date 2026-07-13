@@ -1,5 +1,7 @@
 let container = document.getElementById("container");
 
+//callback , promises
+
 fetch("https://dummyjson.com/products")
     .then((res) => res.json())
     .then((data) => {

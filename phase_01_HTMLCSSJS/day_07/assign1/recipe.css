@@ -1,0 +1,108 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f8f2e4;      /* Cream */
+}
+
+#container{
+    width:90%;
+    margin:auto;
+    padding:40px 0;
+}
+
+h1{
+    text-align:center;
+    color:#8B4513;
+    margin-bottom:30px;
+    font-size:40px;
+}
+
+.search-box{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-bottom:40px;
+    flex-wrap:wrap;
+}
+
+#search{
+    width:380px;
+    padding:15px;
+    border:none;
+    outline:none;
+    border-radius:40px;
+    background:white;
+    font-size:17px;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+
+#searchBtn{
+    padding:15px 35px;
+    border:none;
+    border-radius:40px;
+    background:#FF8C42;
+    color:white;
+    font-size:17px;
+    cursor:pointer;
+    transition:.3s;
+    font-weight:600;
+}
+
+#searchBtn:hover{
+    background:#E76F00;
+    transform:scale(1.05);
+}
+
+#recipes{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:30px;
+}
+
+
+
+.recipe-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+    transition:.4s;
+    width:300px;
+}
+
+.recipe-card:hover{
+    transform:translateY(-10px);
+}
+
+.recipe-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.recipe-content{
+    padding:20px;
+}
+
+.recipe-content h2{
+    color:#8B4513;
+    margin-bottom:10px;
+}
+
+.recipe-content p{
+    margin:8px 0;
+    color:#555;
+    line-height:1.6;
+}
+
+.ingredients{
+    margin-top:10px;
+    color:#777;
+    font-size:15px;
+}
