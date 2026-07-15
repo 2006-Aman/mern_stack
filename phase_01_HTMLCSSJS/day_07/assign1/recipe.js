@@ -60,8 +60,25 @@ function displayRecipes(recipes){
                 <p class="ingredients">
                     ${item.ingredients.slice(0,5).join(", ")}...
                 </p>
+
+                <button class="delete-btn" onclick="deleteRecipe(${item.id})">
+                    🗑 Delete
+                </button>
             </div>
         </div>
         `;
     });
+}
+
+function deleteRecipe(id){
+
+    allRecipes = allRecipes.filter(recipe => recipe.id !== id);
+
+    const value = search.value.toLowerCase().trim();
+
+    if(value === ""){
+        displayRecipes(allRecipes);
+    }else{
+        searchRecipe();
+    }
 }
