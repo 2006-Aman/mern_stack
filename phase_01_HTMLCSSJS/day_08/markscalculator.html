@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input, button {
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .grade-a-plus {
+            color: green;
+        }
+        .grade-a {
+            color: blue;
+        }
+        .grade-b {
+            color: orange;
+        }
+        .grade-c {
+            color: red;
+        }
+        .grade-a-fail {
+            color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mark Calculator</h1>
+    <input type="number" id="marks" placeholder="Enter your marks">
+    <button onclick="calculateGrade()">Calculate Grade</button>
+    <p id="result"></p>
+    
+
+    <script>
+        function calculateGrade() {
+            let marks = Number(document.getElementById("marks").value);
+            let grade;
+
+            if (marks >90) {
+                grade = "A+";
+                result.className = "grade-a-plus";
+            } else if (marks >75) {
+                grade = "A";
+                result.className = "grade-a";
+            } else if (marks >60) {
+                grade = "B";
+                result.className = "grade-b";
+            } else if (marks >40) {
+                grade = "C";
+                result.className = "grade-c";
+            } else {
+                grade = "Fail";
+                result.className = "grade-a-fail";
+            }
+
+            document.getElementById("result").innerHTML =
+                "Your grade is: " + grade;
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Length Check</title>
+</head>
+<body>
+
+    <h2>Password Length Check</h2>
+
+    <input type="password" id="password" placeholder="Enter your password">
+    <button onclick="checkPasswordLength()">Check</button>
+
+    <p id="result"></p>
+
+    <script>
+        function checkPasswordLength() {
+            let password = document.getElementById("password").value;
+
+            if (password.length <= 8) {
+                document.getElementById("result").innerHTML = "Password is weak";
+            } else if (password.length > 8 && password.length <= 12) {
+                document.getElementById("result").innerHTML = "Good password";
+            } else {
+                document.getElementById("result").innerHTML = "Strong password";
+            }
+        }
+    </script>
+
+</body>
+</html>

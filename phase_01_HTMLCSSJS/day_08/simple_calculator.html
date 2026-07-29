@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .calculator {
+            width: 300px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 8px 0;
+        }
+
+        button {
+            padding: 8px 15px;
+            margin: 5px;
+            cursor: pointer;
+            width: 45%;
+        }
+
+        #result {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #207270;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="background-color: rgb(94, 114, 134); padding: 20px; border-radius: 10px;">
+        <div class="calculator">
+            <h2>Simple Calculator</h2>
+
+            <input type="number" id="num1" placeholder="First Number"><br>
+
+            <input type="number" id="num2" placeholder="Second Number"><br>
+
+            <button onclick="calculate('+')">Add</button>
+            <button onclick="calculate('-')">Subtract</button><br>
+
+            <button onclick="calculate('*')">Multiply</button>
+            <button onclick="calculate('/')">Divide</button><br>
+
+            <button onclick="clearFields()">Clear</button>
+
+            <p id="result"></p>
+        </div>
+    </div>
+    <script>
+        function calculate(operator) {
+
+            let num1 = Number(document.getElementById("num1").value);
+            let num2 = Number(document.getElementById("num2").value);
+            let answer;
+
+            if (operator == "+") {
+                answer = num1 + num2;
+            }
+            else if (operator == "-") {
+                answer = num1 - num2;
+            }
+            else if (operator == "*") {
+                answer = num1 * num2;
+            }
+            else if (operator == "/") {
+                if (num2 == 0) {
+                    answer = "Cannot divide by zero";
+                } else {
+                    answer = num1 / num2;
+                }
+            }
+
+            document.getElementById("result").innerHTML = "Result: " + answer;
+        }
+
+        function clearFields() {
+            document.getElementById("num1").value = "";
+            document.getElementById("num2").value = "";
+            document.getElementById("result").innerHTML = "";
+        }
+    </script>
+
+</body>
+
+</html>
