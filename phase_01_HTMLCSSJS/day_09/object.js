@@ -26,3 +26,19 @@ for(let key in student) {
 let obj = {model: "iPhone", price: 1000, color: "black"};
 delete obj.color;
 console.log(obj);
+
+console.log(obj.hasOwnProperty("model"));
+
+let obj1 = {model: "iPhone", price: 1000, color: "black"};
+console.log(Object.keys(obj1).length);
+
+
+let {name, age, address: {city, state, country}} = person;
+console.log(name);
+console.log(age);
+console.log(city);
+
+
+for(let i = 0; i < person.marks.length; i++) {
+    console.log(person.marks[i]);
+}
