@@ -1,0 +1,23 @@
+{
+  "users": [
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "email": "jane@example.com",
+      "age": 25
+    },
+    {
+      "name": "xyz",
+      "email": "xyz@gmail.com",
+      "age": "10",
+      "id": "BUPqj7-lzVo"
+    },
+    {
+      "name": "xyz",
+      "email": "xavaxem557@dropeso.com",
+      "age": "4",
+      "id": "mxIoPfTkp0w"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
