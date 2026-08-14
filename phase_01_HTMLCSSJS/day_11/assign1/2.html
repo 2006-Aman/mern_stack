@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>User Preferences</title>
+    <style>
+       
+        input[type="text"],
+        input[type="color"] {
+            padding: 10px;
+            margin: 5px 0;
+           
+            width: 200px;
+
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+
+        #message {
+            margin-top: 20px;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>User Preferences</h2>
+
+    <input type="text" id="name" placeholder="Enter your name">
+    <input type="color" id="color">
+
+    <button onclick="saveData()">Save Preferences</button>
+    <button onclick="resetData()">Reset</button>
+
+    <h3 id="message"></h3>
+
+    <script>
+        function saveData() {
+            let name = document.getElementById("name").value.trim();
+            let color = document.getElementById("color").value;
+
+            // Check name
+            if (name === "") {
+                alert("Please enter your name!");
+                return;
+            }
+
+            // Check color
+            if (color === "") {
+                alert("Please enter a background color!");
+                return;
+            }
+
+            localStorage.setItem("name", name);
+            localStorage.setItem("color", color);
+
+            document.getElementById("message").innerHTML = "Welcome, " + name + "!";
+
+            document.body.style.backgroundColor = color;
+        }
+
+        window.onload = function () {
+            let name = localStorage.getItem("name");
+            let color = localStorage.getItem("color");
+
+            if (name && color) {
+                document.getElementById("name").value = name;
+                document.getElementById("color").value = color;
+                document.getElementById("message").innerHTML = "Welcome, " + name + "!";
+                document.body.style.backgroundColor = color;
+            }
+        };
+
+        function resetData() {
+            localStorage.clear();
+            document.getElementById("name").value = "";
+            document.getElementById("color").value = "#000000";
+            document.getElementById("message").innerHTML = "";
+            document.body.style.backgroundColor = "white";
+        }
+    </script>
+
+</body>
+
+</html>

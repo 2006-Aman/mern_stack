@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App - LocalStorage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #ccc;
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+        }
+
+        button {
+            margin-top: 10px;
+            margin-right: 5px;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+
+        #status {
+            margin-top: 10px;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Notes</h1>
+
+        <textarea id="notesArea" placeholder="Write your notes here..."></textarea>
+
+        <div class="buttons">
+            <button onclick="saveNotes()">Save</button>
+            <button onclick="loadNotes()">Load</button>
+            <button onclick="clearNotes()">Clear</button>
+        </div>
+
+        <p id="status"></p>
+    </div>
+
+    <script>
+        let key = "notes";
+
+        function show(msg) {
+            document.getElementById("status").innerText = msg;
+        }
+
+        function saveNotes() {
+            let notes = document.getElementById("notesArea").value;
+
+            if (notes === "") {
+                show("Write something first!");
+                return;
+            }
+
+            localStorage.setItem(key, notes);
+            show("Notes saved.");
+        }
+
+        function loadNotes() {
+            let notes = localStorage.getItem(key);
+
+            if (notes) {
+                document.getElementById("notesArea").value = notes;
+                show("Notes loaded.");
+            } else {
+                show("No saved notes.");
+            }
+        }
+
+        function clearNotes() {
+            localStorage.removeItem(key);
+            document.getElementById("notesArea").value = "";
+            show("Notes cleared.");
+        }
+
+        window.onload = loadNotes;
+    </script>
+</body>
+
+</html>
