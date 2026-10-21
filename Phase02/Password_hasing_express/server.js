@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express();
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+
+const SecretKey = "secretkey";
 
 
 app.use(express.json());
@@ -42,6 +45,10 @@ app.post("/login", async (req, res) => {
     if (!isMatch) {
         res.send("password is not valid");
     }
+
+
+
+
 
     res.send("login successful");
 });
